@@ -315,11 +315,11 @@
 # PDS partition
 /pds(/.*)?                     u:object_r:pds_file:s0
 /pds/camera(/.*)?              u:object_r:camera_data_file:s0
-#line 1 "vendor/mk/sepolicy/file_contexts"
+#line 1 "vendor/XPerience/sepolicy/file_contexts"
 /cache/dalvik-cache(/.*)? u:object_r:dalvikcache_data_file:s0
 
 #############################
-# performance-related sysfs files (MK)
+# performance-related sysfs files (XPe)
 /sys/kernel/mm/ksm(/.*)?       --          u:object_r:sysfs_writable:s0
 /sys/devices/system/cpu.*/cpufreq(/.*)? --  u:object_r:sysfs_devices_system_cpu:s0
 /sys/block/mmcblk0/queue/scheduler  --    u:object_r:sysfs_writable:s0
