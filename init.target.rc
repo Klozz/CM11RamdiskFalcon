@@ -152,6 +152,7 @@ service wcnss-service /system/bin/wcnss_service
 
 service ppd /system/bin/mm-pp-daemon
     class late_start
+    disabled
     user system
     socket pps stream 0660 system system
     group system graphics
@@ -159,6 +160,9 @@ service ppd /system/bin/mm-pp-daemon
 on property:init.svc.surfaceflinger=stopped
     stop ppd
 
+on property:init.svc.surfaceflinger=running
+    start ppd
+    
 service mmi-ril-daemon /system/bin/rild
     class main
     socket rild stream 660 root radio
